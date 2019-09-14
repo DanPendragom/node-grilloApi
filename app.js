@@ -5,11 +5,7 @@ const BodyParser = require('body-parser');
 const db = require('./src/models/db');
 
 // controllers modules
-const createUser = require('./src/controllers/createUser');
-const getPeople = require('./src/controllers/getPeople');
-const getPerson = require('./src/controllers/getPerson');
-const updatePerson = require('./src/controllers/updatePerson');
-const deletePerson = require('./src/controllers/deletePerson');
+const User = require('./src/controllers/user');
 
 const app = Express();
 
@@ -20,20 +16,20 @@ db.Connect();
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 
-// creating data
-app.post('/person', createUser);
+// creating person data
+app.post('/person', User.create);
 
-// having data
-app.get('/people', getPeople);
+// having people data
+app.get('/people', User.getPeople);
 
 // getting a single document based on id
-app.get('/person/:id', getPerson);
+app.get('/person/:id', User.getPerson);
 
 // updating a data based on id
-app.put('/person/:id', updatePerson);
+app.put('/person/:id', User.setPerson);
 
 // deleting a data based on id
-app.delete('/person/:id', deletePerson);
+app.delete('/person/:id', User.deletePerson);
 
 // server run config
 app.listen(3000, () => {
