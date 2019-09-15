@@ -7,10 +7,20 @@ const db = {
         Mongoose.connect('mongodb+srv://geovani:ati25144@cluster0-jvwp7.mongodb.net/grillo?retryWrites=true&w=majority');
     },
     // person collection
-    PersonModel: Mongoose.model('person', {
-        name: String,
-        email: String,
-        password: String
+    UsuarioModel: Mongoose.model('usuarios', {
+        nome: String,
+        estado_id: Number,
+        endereco: String,
+        instrumento: String,
+        generoFavorito: [{
+            genero: String
+        }],
+        numeroDocumento: [{
+            rg: String,
+            cpf: String
+        }],
+        login: String,
+        senha: String        
     })
 };
 

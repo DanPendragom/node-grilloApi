@@ -1,11 +1,11 @@
 // Person collection database import
-const PersonModel = require('../models/db').PersonModel;
+const UsuarioModel = require('../models/db').UsuarioModel;
 
-// ações do usuario
+// User actions
 const User = {
-    create: async (request, response) => {
+    createPerson: async (request, response) => {
         try {
-            const person = new PersonModel(request.body);
+            const person = new UsuarioModel(request.body);
             const result = await person.save();
             response.send(result);
         } catch (error) {
@@ -14,7 +14,7 @@ const User = {
     },
     getPeople: async (request, response) => {
         try {
-            const result = await PersonModel.find().exec();
+            const result = await UsuarioModel.find().exec();
             response.send(result);
         } catch (error) {
             response.status(500).send(error);
@@ -22,7 +22,7 @@ const User = {
     },
     getPerson: async (request, response) => {
         try {
-            const person = await PersonModel.findById(request.params.id).exec();
+            const person = await UsuarioModel.findById(request.params.id).exec();
             person.set(request.body);
             const result = await person.save();
             response.send(result);
@@ -32,7 +32,7 @@ const User = {
     },
     setPerson: async (request, response) => {
         try {
-            const person = await PersonModel.findById(request.params.id).exec();
+            const person = await UsuarioModel.findById(request.params.id).exec();
             person.set(request.body);
             const result = await person.save();
             response.send(result);
@@ -42,7 +42,7 @@ const User = {
     },
     deletePerson: async (request, response) => {
         try {
-            const result = await PersonModel.deleteOne({ _id: request.params.id }).exec();
+            const result = await UsuarioModel.deleteOne({ _id: request.params.id }).exec();
             response.send(result);
         } catch (error) {
             response.status(500).send(error);

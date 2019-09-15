@@ -17,19 +17,19 @@ app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 
 // creating person data
-app.post('/person', User.create);
+app.post('/createUser', User.createPerson);
 
 // having people data
-app.get('/people', User.getPeople);
+app.get('/getPeople', User.getPeople);
 
 // getting a single document based on id
-app.get('/person/:id', User.getPerson);
+app.get('/getUser/:id', User.getPerson);
 
 // updating a data based on id
-app.put('/person/:id', User.setPerson);
+app.put('/setUser/:id', User.setPerson);
 
 // deleting a data based on id
-app.delete('/person/:id', User.deletePerson);
+app.delete('/deleteUser/:id', User.deletePerson);
 
 // server run config
 app.listen(3000, () => {
