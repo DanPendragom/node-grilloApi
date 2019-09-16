@@ -1,12 +1,12 @@
 // Person collection database import
-const UsuarioModel = require('../models/db').UsuarioModel;
+const UsuarioSchema = require('../models/UsuarioSchema').UsuarioSchema;
 
 // User actions
 const User = {
     createPerson: async (request, response) => {
         try {            
             // creating a document on the database
-            const person = new UsuarioModel(request.body);
+            const person = new UsuarioSchema(request.body);
             const result = await person.save();
             response.send(result);
         } catch (error) {
@@ -15,7 +15,7 @@ const User = {
     },
     getPeople: async (request, response) => {
         try {
-            const result = await UsuarioModel.find().exec();
+            const result = await UsuarioSchema.find().exec();
             response.send(result);
         } catch (error) {
             response.status(500).send(error);
@@ -23,7 +23,7 @@ const User = {
     },
     getPerson: async (request, response) => {
         try {
-            const person = await UsuarioModel.findById(request.params.id).exec();
+            const person = await UsuarioSchema.findById(request.params.id).exec();
             person.set(request.body);
             const result = await person.save();
             response.send(result);
@@ -33,7 +33,7 @@ const User = {
     },
     setPerson: async (request, response) => {
         try {
-            const person = await UsuarioModel.findById(request.params.id).exec();
+            const person = await UsuarioSchema.findById(request.params.id).exec();
             person.set(request.body);
             const result = await person.save();
             response.send(result);
@@ -43,7 +43,7 @@ const User = {
     },
     deletePerson: async (request, response) => {
         try {
-            const result = await UsuarioModel.deleteOne({ _id: request.params.id }).exec();
+            const result = await UsuarioSchema.deleteOne({ _id: request.params.id }).exec();
             response.send(result);
         } catch (error) {
             response.status(500).send(error);
