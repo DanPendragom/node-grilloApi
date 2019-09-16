@@ -4,7 +4,8 @@ const UsuarioModel = require('../models/db').UsuarioModel;
 // User actions
 const User = {
     createPerson: async (request, response) => {
-        try {
+        try {            
+            // creating a document on the database
             const person = new UsuarioModel(request.body);
             const result = await person.save();
             response.send(result);

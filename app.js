@@ -4,8 +4,11 @@ const BodyParser = require('body-parser');
 // database config module
 const db = require('./src/models/db');
 
-// controllers modules
-const User = require('./src/controllers/user');
+// user route module
+const userRoute = require('./src/routes/userRoute');
+
+// upload route
+const uploadRoute = require('./src/routes/uploadRoute');
 
 const app = Express();
 
@@ -16,20 +19,11 @@ db.Connect();
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 
-// creating person data
-app.post('/createUser', User.createPerson);
+// user route acivate
+userRoute(app);
 
-// having people data
-app.get('/getPeople', User.getPeople);
-
-// getting a single document based on id
-app.get('/getUser/:id', User.getPerson);
-
-// updating a data based on id
-app.put('/setUser/:id', User.setPerson);
-
-// deleting a data based on id
-app.delete('/deleteUser/:id', User.deletePerson);
+// upload route activate
+uploadRoute(app);
 
 // server run config
 app.listen(3000, () => {
