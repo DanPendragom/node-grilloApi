@@ -8,7 +8,7 @@ const app = Express();
  * Database setup
  */
 mongoose.connect(
-    'mongodb+srv://geovani:ati25144@cluster0-jvwp7.mongodb.net/grillo?retryWrites=true&w=majority',
+    'mongodb+srv://geovani:geovani123@cluster0-jvwp7.mongodb.net/grillo?retryWrites=true&w=majority',
     {
         useNewUrlParser: true
     }
@@ -21,7 +21,8 @@ app.use(Express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 // routes init
-app.use(require('./routes'));
+app.use(require('./routes/user'));
+app.use(require('./routes/files'));
 
 // server run config
 app.listen(3000, () => {
