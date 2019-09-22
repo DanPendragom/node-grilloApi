@@ -36,7 +36,7 @@ The server will run on the port ```3000```;
 The grillo api use http protocol to work with uri routing, however you need to know how are the routes.
 below contains all access routes and their operation:
 
-| Method | Uri                       | functionality                                         | Content-Type                                |
+| Method | Uri                       | Functionality                                         | Content-Type                                |
 |--------|---------------------------|-------------------------------------------------------|---------------------------------------------|
 | POST   | /cadastro                 | used to create a new user collection in the database. | json                                        |
 | POST   | /usuario/imagens/:user_id | add a profile picture to an existing user.            | image/jpeg  image/pjpeg image/png image/gif |
