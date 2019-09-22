@@ -1,4 +1,5 @@
 const routes = require('express').Router();
+const fs = require('fs');
 
 // Person collection database import
 const Usuarios = require('../models/UsuariosModel');
@@ -58,8 +59,15 @@ routes.put('/usuario/:id', async (req, res) => {
 
 // deleting a user
 routes.delete('/usuario/:id', async (req, res) => {
-    try {            
-        // searching on dataset
+    try {
+        // deleting profile image
+        const usuario = await Usuarios.findById(req.params.id).exec();
+        if (usuario.imagemPerfil.url) {
+            fs.unlink(usuario.imagemPerfil.url, err => {
+                if (err) throw err;
+            });
+        }
+        // deleting on dataset
         const result = await Usuarios.deleteOne({ _id: req.params.id }).exec();
 
         return res.status(200).json(result);
