@@ -44,7 +44,7 @@ below contains all access routes and their operation:
 | GET    | /usuario/:id              | get a single user data through id passed by url.      | json                                        |
 | GET    | /usuario/imagem/:id       | get profile image of a user.                          | file/image                                  |
 | PUT    | /usuario/:id              | update a user data.                                   | json                                        |
-| DELETE | /usuario/:id              | delete an user from database.                         | json                                        |
+| DELETE | /usuario/:id              | delete an user data from database.                         | json                                        |
 
 
 ## Development setup
