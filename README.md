@@ -1,8 +1,9 @@
 # Grillo Api
-> The oficcial Restful api of the React/React-Native project.
 
 [![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
+
+> The oficcial Restful api of the React/React-Native project.
 
 The grillo api provides a modern and faster web services architecture.
 This api is currently in development stage, the deadline of the beta version is expected to December/2019.
@@ -26,8 +27,25 @@ yarn install
 After, run the following command in the api root directory:
 
 ```sh
-node ./src/app.js
+npm start
 ```
+The server will run on the port ```3000```;
+
+## Usage example
+
+The grillo api use http protocol to work with uri routing, however you need to know how are the routes.
+below contains all access routes and their operation:
+
+| Method | Uri                       | functionality                                         | Content-Type                                |
+|--------|---------------------------|-------------------------------------------------------|---------------------------------------------|
+| POST   | /cadastro                 | used to create a new user collection in the database. | json                                        |
+| POST   | /usuario/imagens/:user_id | add a profile picture to an existing user.            | image/jpeg  image/pjpeg image/png image/gif |
+| GET    | /usuarios                 | get all registered users.                             | json                                        |
+| GET    | /usuario/:id              | get a single user data through id passed by url.      | json                                        |
+| GET    | /usuario/imagem/:id       | get profile image of a user.                          | file/image                                  |
+| PUT    | /usuario/:id              | update a user data.                                   | json                                        |
+| DELETE | /usuario/:id              | delete an user from database.                         | json                                        |
+
 
 ## Development setup
 
@@ -56,5 +74,4 @@ Distributed under the Auxiware open source license. See ``LICENSE`` for more inf
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/datadog-metrics
-[travis-image]: https://travis-ci.org/messiasGeovani/grillo-api.svg?branch=master
-[travis-url]: https://travis-ci.org/messiasGeovani/grillo-api
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
