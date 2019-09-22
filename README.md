@@ -39,7 +39,7 @@ below contains all access routes and their operation:
 | Method | Uri                       | Functionality                                         | Content-Type                                |
 |--------|---------------------------|-------------------------------------------------------|---------------------------------------------|
 | POST   | /cadastro                 | used to create a new user collection in the database. | json                                        |
-| POST   | /usuario/imagens/:user_id | add a profile picture to an existing user.            | image/jpeg  image/pjpeg image/png image/gif |
+| POST   | /usuario/imagens/:user_id | add a profile picture to an existing user.            | image/jpeg,  image/pjpeg, image/png, image/gif |
 | GET    | /usuarios                 | get all registered users.                             | json                                        |
 | GET    | /usuario/:id              | get a single user data through id passed by url.      | json                                        |
 | GET    | /usuario/imagem/:id       | get profile image of a user.                          | file/image                                  |
