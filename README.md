@@ -31,7 +31,7 @@ npm start
 ```
 The server will run on the port ```3000```;
 
-## Usage example
+## Usage manual
 
 The grillo api use http protocol to work with uri routing, however you need to know how are the routes.
 below contains all access routes and their operation:
