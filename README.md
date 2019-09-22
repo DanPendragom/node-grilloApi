@@ -39,7 +39,7 @@ npm run dev
 
 ## Meta
 
-Messias Geovani – (https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) – messias.geovani.lima@gmail.com
+Messias Geovani – [Linkedin/MessiasGeovani](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) – messias.geovani.lima@gmail.com
 
 Distributed under the Auxiware open source license. See ``LICENSE`` for more information.
 
@@ -47,7 +47,7 @@ Distributed under the Auxiware open source license. See ``LICENSE`` for more inf
 
 ## Contributing
 
-1. Fork it (<https://github.com/messiasGeovani/grillo-api>)
+1. Fork it (<https://github.com/messiasGeovani/grillo-api/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
