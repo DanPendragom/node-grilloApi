@@ -12,7 +12,7 @@ This api is currently in development stage, the deadline of the beta version is 
 
 ## Installation
 
-OS X & Linux:
+Debian based Linux distributions:
 
 ```sh
 sudo yarn install
