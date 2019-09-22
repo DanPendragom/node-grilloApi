@@ -1,7 +1,4 @@
 language: nodejs
-rvm:
-  - 1.0
-  - express
 os:
   - Linux
   - Windows
