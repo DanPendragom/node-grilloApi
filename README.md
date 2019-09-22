@@ -39,7 +39,7 @@ npm run dev
 
 ## Meta
 
-Messias Geovani – (https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) – messias.geovani.lima@gmail.com
+Messias Geovani – [https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D](Linkedin/MessiasGeovani) – messias.geovani.lima@gmail.com
 
 Distributed under the Auxiware open source license. See ``LICENSE`` for more information.
 
