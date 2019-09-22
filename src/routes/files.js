@@ -9,19 +9,24 @@ const fs = require('fs');
 // Person collection database import
 const Usuarios = require('../models/UsuariosModel');
 
-// uploading a image
+// uploading a profille image
 routes.post('/cadastro/imagem/:user_id', multer(multerConfig).single('file'), async (req, res) => {
     try {
 
         const usuario = await Usuarios.findById(req.params.user_id).exec();
+        if (usuario.imagemPerfil.url) {
+            fs.unlink(usuario.imagemPerfil.url, err => {
+                if (err) throw err;
+            });
+        }
 
-        const { originalname: nome, tamanho, filename: identifier } = req.file;
+        const { originalname: nome, tamanho, filename: key } = req.file;
 
-        const inputFile = path.resolve(__dirname, '..', '..', 'public', identifier);
-        const outputFile = path.resolve(__dirname, '..', '..', 'public', '640'+identifier);
+        const inputFile = path.resolve(__dirname, '..', '..', 'public', key);
+        const url = path.resolve(__dirname, '..', '..', 'public', '640'+key);
 
         // resizing the image to the correct resolution
-        sharp(inputFile).resize(640,640).toFile(outputFile)
+        sharp(inputFile).resize(640,640).toFile(url)
             .then(newFileInfo => {
                 fs.unlink(inputFile, err => {
                     if (err) throw err;
@@ -32,8 +37,8 @@ routes.post('/cadastro/imagem/:user_id', multer(multerConfig).single('file'), as
         const fileData = {
             nome,
             tamanho,
-            outputFile,
-            url: path.resolve(__dirname, '..', '..', 'public', outputFile)
+            key,
+            url: path.resolve(__dirname, '..', '..', 'public', url)
         };
         
         // inserting the filedata on database
