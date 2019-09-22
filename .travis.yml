@@ -1,4 +1,6 @@
 language: nodejs
+rvm:
+  - 1.0
 os:
   - Linux
   - Windows
