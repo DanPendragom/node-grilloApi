@@ -3,7 +3,7 @@
 [![NPM Version][npm-image]][npm-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-> The oficcial Restful api of the React/React-Native project.
+> The official Restful api of the React/React-Native front-end project.
 
 The grillo api provides a modern and faster web services architecture.
 This api is currently in development stage, the deadline of the beta version is expected to December/2019.
