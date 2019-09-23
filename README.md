@@ -70,7 +70,7 @@ npm run dev
 
 ## Database config
 
-To use the official grillo database, contact the [Auxiware](https://github.com/Auxiware) team. However, you can add your personal database, for this just modify mongoose connection parameters located in ```[./src/app.js](https://github.com/messiasGeovani/grillo-api/blob/master/src/app.js)``` file.
+To use the official grillo database, contact the [Auxiware](https://github.com/Auxiware) team. However, you can add your personal database, for this just modify mongoose connection parameters located in [```app.js```](https://github.com/messiasGeovani/grillo-api/blob/master/src/app.js) file.
 
 ## Meta
 
