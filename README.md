@@ -60,7 +60,7 @@ below contains all access routes and their operation:
 | PUT    | /postagem/:id         | update a post data.                                | json                                        |
 | DELETE | /post/:id             | delete an post from database.                      | json                                        |
 
-### Event routes:
+#### Event routes:
 
 | Method | Uri                | Functionality                      | Content-Type                                   |
 |--------|--------------------|------------------------------------|------------------------------------------------|
