@@ -23,6 +23,7 @@ app.use(morgan('dev'));
 // routes init
 app.use(require('./routes/user'));
 app.use(require('./routes/files'));
+app.use(require('./routes/posts'));
 
 // server run config
 app.listen(3000, () => {

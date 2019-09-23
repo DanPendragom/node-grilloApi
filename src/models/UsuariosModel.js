@@ -5,6 +5,7 @@ const Mongoose = require('mongoose');
 const Usuarios = new Mongoose.Schema({
     nome: String,
     estado: String,
+    descricao: String,
     endereco: String,
     instrumento: String,
     generoFavorito: [{
