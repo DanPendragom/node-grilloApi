@@ -10,6 +10,12 @@ const fs = require('fs');
 const Usuarios = require('../models/UsuariosModel');
 // Post Database import
 const PostModel = require('../models/PostModel');
+// Event database import
+const Eventos = require('../models/EventosModel');
+
+/**
+ * User image routes setup
+ */
 
 // uploading a profille image
 routes.post('/cadastro/imagem/:user_id', multer(multerConfig).single('file'), async (req, res) => {
@@ -68,6 +74,10 @@ routes.get('/usuario/imagem/:id', async (req, res) => {
     }
 });
 
+/**
+ * Post image routes setup
+ */
+
 // uploading a post image
 routes.post('/postagem/imagem/:id', multer(multerConfig).single('file'), async (req, res) => {
     try {
@@ -108,6 +118,55 @@ routes.get('/postagem/imagem/:id', async (req, res) => {
         const image = post.imagem.url;
 
         return res.status(200).sendFile(image);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+});
+
+/**
+ * Event image routes setup
+ */
+
+// uploading a event image on the server
+routes.post('/evento/imagem/:id', multer(multerConfig).single('file'), async (req, res) => {
+    try {
+        // getting event on database
+        const evento = await Eventos.findById(req.params.id).exec();
+        if (evento.imagem.url) {
+            fs.unlink(evento.imagem.url, err => {
+                if (err) throw err;
+            });
+        }
+
+        // simplifying the properties of the file
+        const { originalname: nome, tamanho, filename: key } = req.file;
+
+        // file data
+        const fileData = {
+            nome,
+            tamanho,
+            key,
+            url: path.resolve(__dirname, '..', '..', 'public', key)
+        };
+
+        // uploading the url image on the database
+        evento.set({ imagem: fileData });
+        const result = await evento.save();
+
+        return res.status(200).json(result);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+});
+
+// getting a image on the server
+routes.get('/evento/imagem/:id', async (req, res) => {
+    try {
+        // getting the url file
+        const evento = await Eventos.findById(req.params.id).exec();
+        const result = await evento.save();
+
+        return res.status(200).sendFile(evento.imagem.url);
     } catch (error) {
         return res.status(500).json(error);
     }

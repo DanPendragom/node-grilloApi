@@ -20,7 +20,7 @@ routes.post('/cadastro', async (req, res) => {
 // getting all users
 routes.get('/usuarios', async (req, res) => {
     try {            
-        // creating a document on the database
+        // getting on the database
         const result = await Usuarios.find().exec();
 
         return res.status(200).json(result);

@@ -24,6 +24,7 @@ app.use(morgan('dev'));
 app.use(require('./routes/user'));
 app.use(require('./routes/files'));
 app.use(require('./routes/posts'));
+app.use(require('./routes/eventos'));
 
 // server run config
 app.listen(3000, () => {
