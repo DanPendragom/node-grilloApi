@@ -36,6 +36,8 @@ The server will run on the port ```3000```;
 The grillo api use http protocol to work with uri routing, however you need to know how are the routes.
 below contains all access routes and their operation:
 
+User routes:
+
 | Method | Uri                       | Functionality                                         | Content-Type                                |
 |--------|---------------------------|-------------------------------------------------------|---------------------------------------------|
 | POST   | /cadastro                 | used to create a new user collection in the database. | json                                        |
@@ -46,6 +48,17 @@ below contains all access routes and their operation:
 | PUT    | /usuario/:id              | update a user data.                                   | json                                        |
 | DELETE | /usuario/:id              | delete an user data from database.                         | json                                        |
 
+Post routes:
+
+| Method | Uri                   | Functionality                                      | Content-Type                                |
+|--------|-----------------------|----------------------------------------------------|---------------------------------------------|
+| POST   | /postagem             | used to add a new post collection in the database. | json                                        |
+| POST   | /postagem/imagens/:id | upload a picture to an existing post.              | image/jpeg  image/pjpeg image/png image/gif |
+| GET    | /postagens            | get all posts.                                     | json                                        |
+| GET    | /postagem/:id         | get a single post data through id passed by url.   | json                                        |
+| GET    | /postagem/imagem/:id  | get the image of a post.                           | file/image                                  |
+| PUT    | /postagem/:id         | update a post data.                                | json                                        |
+| DELETE | /post/:id             | delete an post from database.                      | json                                        |
 
 ## Development setup
 
@@ -55,11 +68,15 @@ To run this project in the development mode, you will use nodemon dev tool, loca
 npm run dev
 ```
 
+## Database config
+
+To use the official grillo database, contact the [Auxiware](https://github.com/Auxiware) team. However, you can add your personal database, for this just modify mongoose connection parameters located in ```[./src/app.js](https://github.com/messiasGeovani/grillo-api/blob/master/src/app.js)``` file.
+
 ## Meta
 
-Messias Geovani – [Linkedin/MessiasGeovani](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) – messias.geovani.lima@gmail.com
+Messias Geovani – [Linkedin Profile](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) – email: messias.geovani.lima@gmail.com
 
-Distributed under the Auxiware open source license. See ``LICENSE`` for more information.
+Distributed under the [Auxiware](https://github.com/Auxiware) open source license. See ``LICENSE`` for more information.
 
 [https://github.com/messiasGeovani](https://github.com/messiasGeovani)
 
