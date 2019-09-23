@@ -60,6 +60,18 @@ below contains all access routes and their operation:
 | PUT    | /postagem/:id         | update a post data.                                | json                                        |
 | DELETE | /post/:id             | delete an post from database.                      | json                                        |
 
+### Event routes:
+
+| Method | Uri                | Functionality                      | Content-Type                                   |
+|--------|--------------------|------------------------------------|------------------------------------------------|
+| POST   | /evento            | create a new event data.           | json                                           |
+| POST   | /evento/imagem/:id | upload and update a event image.   | image/jpeg, image/pjpeg, image/png,  image/gif |
+| GET    | /eventos           | get all events on database.        | json                                           |
+| GET    | /evento/:id        | get a single event data.           | json                                           |
+| GET    | /evento/imagem/:id | get the event image.               | file/image                                     |
+| PUT    | /evento/:id        | update an event data.              | json                                           |
+| DELETE | /evento/:id        | delete a event data from database. | json                                           |
+
 ## Development setup
 
 To run this project in the development mode, you will use nodemon dev tool, located in the "dev" package.json script setup:
