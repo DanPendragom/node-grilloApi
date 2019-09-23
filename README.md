@@ -74,9 +74,9 @@ To use the official grillo database, contact the [Auxiware](https://github.com/A
 
 ## Meta
 
-Messias Geovani – [Linkedin Profile](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) – email: messias.geovani.lima@gmail.com
+Messias Geovani – [Linkedin Profile](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) / email: messias.geovani.lima@gmail.com
 
-Distributed under the [Auxiware](https://github.com/Auxiware) open source license. See ``LICENSE`` for more information.
+Distributed under the [```Auxiware```](https://github.com/Auxiware) open source license. See ``LICENSE`` for more information.
 
 [https://github.com/messiasGeovani](https://github.com/messiasGeovani)
 
