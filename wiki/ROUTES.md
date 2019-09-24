@@ -1,4 +1,5 @@
-#Usage Manual: ## Routes guide
+# Usage Manual:
+> Routes guide
 
 below contains all http routes and their features
 
