@@ -52,8 +52,8 @@ below contains all access routes and their operation:
 | POST   | /usuario/imagens/:user_id | add and update a profile picture to an existing user.            | image/jpeg,  image/pjpeg, image/png, image/gif |
 | GET    | /usuarios                 | get all registered users.                             | json                                        |
 | GET    | /usuario/:id              | get a single user data through id passed by url.      | json                                        |
-| GET    | /usuario/imagem/perfil:id       | get profile image of a user.                          | file/image                                  |
-| GET    | /usuario/imagem/banner:id       | get profile banner of a user.                          | file/image                                  |
+| GET    | /usuario/imagem/perfil/:id       | get profile image of a user.                          | file/image                                  |
+| GET    | /usuario/imagem/banner/:id       | get profile banner of a user.                          | file/image                                  |
 | PUT    | /usuario/:id              | update a user data.                                   | json                                        |
 | DELETE | /usuario/:id              | delete an user data from database.                         | json                                        |
 
