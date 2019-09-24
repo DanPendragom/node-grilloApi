@@ -72,6 +72,18 @@ below contains all access routes and their operation:
 | PUT    | /evento/:id        | update an event data.              | json                                           |
 | DELETE | /evento/:id        | delete a event data from database. | json                                           |
 
+#### Vacancy routes:
+
+| Method | Uri                | Functionality                      | Content-Type                                   |
+|--------|--------------------|------------------------------------|------------------------------------------------|
+| POST   | /vaga            | create a new vacancy data.           | json                                           |
+| POST   | /vaga/imagem/:id | upload and update a vacancy image.   | image/jpeg, image/pjpeg, image/png,  image/gif |
+| GET    | /vagas           | get all vacancies on database.        | json                                           |
+| GET    | /vaga/:id        | get a single vacancy data.           | json                                           |
+| GET    | /vaga/imagem/:id | get the vacancy image.               | file/image                                     |
+| PUT    | /vaga/:id        | update an event data.              | json                                           |
+| DELETE | /vaga/:id        | delete a vacancy data from database. | json                                           |
+
 ## Development setup
 
 To run this project in the development mode, you will use nodemon dev tool, located in the "dev" package.json script setup:
