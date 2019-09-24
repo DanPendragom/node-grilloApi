@@ -7,7 +7,7 @@ const Eventos = new Mongoose.Schema({
         usuario_id: String,
         nome: String
     },
-    nome: String,
+    titulo: String,
     endereco: String,
     descricao: String,
     imagem: {
@@ -19,7 +19,11 @@ const Eventos = new Mongoose.Schema({
     criacao: {
         type: Date,
         defautl: Date.now
-    }
+    },
+    participantes: [{
+        usuario_id: String,
+        nome: String
+    }]
 });
 
 module.exports = Mongoose.model('eventos', Eventos);

@@ -35,7 +35,7 @@ G_BEGIN_DECLS
 /**
  * GSocketConnectable:
  *
- * Interface for objects that contain or generate a #GSocketAddress.
+ * Interface for objects that contain or generate #GSocketAddresses.
  */
 typedef struct _GSocketConnectableIface GSocketConnectableIface;
 

@@ -15,13 +15,13 @@ This api is currently in development stage, the deadline of the beta version is 
 Debian based Linux distributions:
 
 ```sh
-sudo yarn install
+yarn install
 ```
 
 Windows:
 
 ```sh
-yarn install
+npm install
 ```
 
 After, run the following command in the api root directory:

@@ -25,6 +25,7 @@ app.use(require('./routes/user'));
 app.use(require('./routes/files'));
 app.use(require('./routes/posts'));
 app.use(require('./routes/eventos'));
+app.use(require('./routes/vagas'));
 
 // server run config
 app.listen(3000, () => {

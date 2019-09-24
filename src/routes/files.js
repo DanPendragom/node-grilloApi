@@ -12,6 +12,8 @@ const Usuarios = require('../models/UsuariosModel');
 const PostModel = require('../models/PostModel');
 // Event database import
 const Eventos = require('../models/EventosModel');
+// vacancy database import
+const Vagas = require('../models/VagasModel');
 
 /**
  * User image routes setup
@@ -167,6 +169,55 @@ routes.get('/evento/imagem/:id', async (req, res) => {
         const result = await evento.save();
 
         return res.status(200).sendFile(evento.imagem.url);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+});
+
+/**
+ * Vacancy routes setup
+ */
+
+ // uploading a vacancy image on the server
+routes.post('/vaga/imagem/:id', multer(multerConfig).single('file'), async (req, res) => {
+    try {
+        // getting vacancy on database
+        const vaga = await Vagas.findById(req.params.id).exec();
+        if (vaga.imagem.url) {
+            fs.unlink(vaga.imagem.url, err => {
+                if (err) throw err;
+            });
+        }
+
+        // simplifying the properties of the file
+        const { originalname: nome, tamanho, filename: key } = req.file;
+
+        // file data
+        const fileData = {
+            nome,
+            tamanho,
+            key,
+            url: path.resolve(__dirname, '..', '..', 'public', key)
+        };
+
+        // uploading the url image on the database
+        vaga.set({ imagem: fileData });
+        const result = await vaga.save();
+
+        return res.status(200).json(result);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+});
+
+// getting a vacancy image on the server
+routes.get('/vaga/imagem/:id', async (req, res) => {
+    try {
+        // getting the url file
+        const vaga = await Vagas.findById(req.params.id).exec();
+        const result = await vaga.save();
+
+        return res.status(200).sendFile(vaga.imagem.url);
     } catch (error) {
         return res.status(500).json(error);
     }
