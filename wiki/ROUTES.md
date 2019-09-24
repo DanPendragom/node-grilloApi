@@ -1,7 +1,8 @@
 # Usage Manual:
 > Routes guide
 
-below contains all http routes and their features
+The grillo api use http protocol to work with uri routing, however you need to know how are the routes.
+Below contains all http routes and their features
 
 #### User routes:
 
