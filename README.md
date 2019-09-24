@@ -100,6 +100,8 @@ below contains all access routes and their operation:
 | POST   | /musico            | create a new musician data.           | json                                           |
 | GET    | /musicos           | get all musicians on database.        | json                                           |
 | GET    | /musico/:id        | get a single musician data.           | json                                           |
+| GET    | /musico/imagem/perfil/:id        | get a single musician profile image.           | json                                           |
+| GET    | /musico/imagem/banner/:id        | get a single musician profile image.           | json                                           |
 | PUT    | /musico/:id        | update an musician data.              | json                                           |
 | DELETE | /vaga/:id        | delete a vacancy data from database. | json                                           |
 
