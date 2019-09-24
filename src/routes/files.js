@@ -29,6 +29,11 @@ routes.post('/cadastro/imagem/:user_id', multer(multerConfig).single('file'), as
                 if (err) throw err;
             });
         }
+        if (usuario.imagemBanner.url) {
+            fs.unlink(usuario.imagemBanner.url, err => {
+                if (err) throw err;
+            });
+        }
 
         // simplifying the file properties
         const { originalname: nome, tamanho, filename: key } = req.file;
@@ -39,22 +44,25 @@ routes.post('/cadastro/imagem/:user_id', multer(multerConfig).single('file'), as
 
         // resizing the image to the correct resolution
         sharp(inputFile).resize(640,640).toFile(url)
-            .then(newFileInfo => {
-                fs.unlink(inputFile, err => {
-                    if (err) throw err;
-                });
-            });
             
         // file data
         const fileData = {
-            nome,
-            tamanho,
-            key,
-            url: path.resolve(__dirname, '..', '..', 'public', url)
+            imagemPerfil: {
+                nome,
+                tamanho,
+                key,
+                url: path.resolve(__dirname, '..', '..', 'public', url)
+            },
+            imagemBanner: {
+                nome,
+                tamanho,
+                key,
+                url: path.resolve(__dirname, '..', '..', 'public', inputFile)
+            }
         };
         
         // uploading the url file on the database
-        usuario.set({ imagemPerfil: fileData });
+        usuario.set(fileData);
         const result = await usuario.save();
 
         return res.status(200).json(result);
@@ -64,13 +72,26 @@ routes.post('/cadastro/imagem/:user_id', multer(multerConfig).single('file'), as
 });
 
 // getting a profile image
-routes.get('/usuario/imagem/:id', async (req, res) => {
+routes.get('/usuario/imagem/perfil/:id', async (req, res) => {
     try {            
         // searching on dataset
         const usuario = await Usuarios.findById(req.params.id).exec();
         const image = usuario.imagemPerfil.url;
 
         return res.status(200).sendFile(image);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+});
+
+// getting a banner profile image
+routes.get('/usuario/imagem/banner/:id', async (req, res) => {
+    try {            
+        // searching on dataset
+        const usuario = await Usuarios.findById(req.params.id).exec();
+        const banner = usuario.imagemBanner.url;
+
+        return res.status(200).sendFile(banner);
     } catch (error) {
         return res.status(500).json(error);
     }

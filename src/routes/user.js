@@ -67,6 +67,11 @@ routes.delete('/usuario/:id', async (req, res) => {
                 if (err) throw err;
             });
         }
+        if (usuario.imagemBanner.url) {
+            fs.unlink(usuario.imagemBanner.url, err => {
+                if (err) throw err;
+            });
+        }
         // deleting on dataset
         const result = await Usuarios.deleteOne({ _id: req.params.id }).exec();
 

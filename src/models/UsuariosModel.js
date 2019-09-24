@@ -7,7 +7,6 @@ const Usuarios = new Mongoose.Schema({
     estado: String,
     descricao: String,
     endereco: String,
-    instrumento: String,
     generoFavorito: [{
         genero: String
     }],
@@ -22,7 +21,13 @@ const Usuarios = new Mongoose.Schema({
         tamanho: Number,
         key: String,
         url: String
-    } 
+    },
+    imagemBanner: {
+        nome: String,
+        tamanho: String,
+        key: String,
+        url: String
+    }
 });
 
 module.exports = Mongoose.model('usuarios', Usuarios);
