@@ -41,7 +41,7 @@ The server will run on the port ```3000```;
 
 ## Usage manual
 
-This usage manual is intended to guide and inform the user as to the correct
+The usage manual is intended to guide and inform the user as to the correct
 application, operation and maintenance of the api.
 
 - [Routes](https://github.com/messiasGeovani/grillo-api/blob/master/wiki/ROUTES.md)
