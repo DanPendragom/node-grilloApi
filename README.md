@@ -12,19 +12,27 @@ This api is currently in development stage, the deadline of the beta version is 
 
 ## Installation
 
-Debian based Linux distributions:
+##### Debian based Linux distributions:
 
 ```sh
 yarn install
 ```
 
-Windows:
+##### Windows:
+
+To run this project on windows OS, run first:
+
+```sh
+yarn install
+```
+
+After, you must correct the system compatibility with:
 
 ```sh
 npm install
 ```
 
-After, run the following command in the api root directory:
+Lastly, run the following command in the api root directory:
 
 ```sh
 npm start
@@ -44,7 +52,8 @@ below contains all access routes and their operation:
 | POST   | /usuario/imagens/:user_id | add and update a profile picture to an existing user.            | image/jpeg,  image/pjpeg, image/png, image/gif |
 | GET    | /usuarios                 | get all registered users.                             | json                                        |
 | GET    | /usuario/:id              | get a single user data through id passed by url.      | json                                        |
-| GET    | /usuario/imagem/:id       | get profile image of a user.                          | file/image                                  |
+| GET    | /usuario/imagem/perfil:id       | get profile image of a user.                          | file/image                                  |
+| GET    | /usuario/imagem/banner:id       | get profile banner of a user.                          | file/image                                  |
 | PUT    | /usuario/:id              | update a user data.                                   | json                                        |
 | DELETE | /usuario/:id              | delete an user data from database.                         | json                                        |
 
@@ -82,6 +91,16 @@ below contains all access routes and their operation:
 | GET    | /vaga/:id        | get a single vacancy data.           | json                                           |
 | GET    | /vaga/imagem/:id | get the vacancy image.               | file/image                                     |
 | PUT    | /vaga/:id        | update an vacancy data.              | json                                           |
+| DELETE | /vaga/:id        | delete a vacancy data from database. | json                                           |
+
+#### Musicians routes:
+
+| Method | Uri                | Functionality                      | Content-Type                                   |
+|--------|--------------------|------------------------------------|------------------------------------------------|
+| POST   | /musico            | create a new musician data.           | json                                           |
+| GET    | /musicos           | get all musicians on database.        | json                                           |
+| GET    | /musico/:id        | get a single musician data.           | json                                           |
+| PUT    | /musico/:id        | update an musician data.              | json                                           |
 | DELETE | /vaga/:id        | delete a vacancy data from database. | json                                           |
 
 ## Development setup
