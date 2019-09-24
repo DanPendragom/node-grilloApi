@@ -244,4 +244,34 @@ routes.get('/vaga/imagem/:id', async (req, res) => {
     }
 });
 
+/**
+ * Musicians files setup
+ */
+
+ // getting a musician image
+routes.get('/musico/imagem/perfil/:id', async (req, res) => {
+    try {            
+        // searching on dataset
+        const musico = await Musicos.findById(req.params.id).exec();
+        const image = musico.imagemPerfil.url;
+
+        return res.status(200).sendFile(image);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+});
+
+// getting a banner musician image
+routes.get('/musico/imagem/banner/:id', async (req, res) => {
+    try {            
+        // searching on dataset
+        const musico = await Musicos.findById(req.params.id).exec();
+        const banner = musico.imagemBanner.url;
+
+        return res.status(200).sendFile(banner);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+});
+
 module.exports = routes;
