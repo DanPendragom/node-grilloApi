@@ -41,7 +41,8 @@ The server will run on the port ```3000```;
 
 ## Usage manual
 
-The grillo api use http protocol to work with uri routing, however you need to know how are the routes.
+This usage manual is intended to guide and inform the user as to the correct
+application, operation and maintenance of the api.
 
 - [Routes](https://github.com/messiasGeovani/grillo-api/blob/master/wiki/ROUTES.md)
 
