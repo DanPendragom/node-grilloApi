@@ -81,7 +81,7 @@ below contains all access routes and their operation:
 | GET    | /vagas           | get all vacancies on database.        | json                                           |
 | GET    | /vaga/:id        | get a single vacancy data.           | json                                           |
 | GET    | /vaga/imagem/:id | get the vacancy image.               | file/image                                     |
-| PUT    | /vaga/:id        | update an event data.              | json                                           |
+| PUT    | /vaga/:id        | update an vacancy data.              | json                                           |
 | DELETE | /vaga/:id        | delete a vacancy data from database. | json                                           |
 
 ## Development setup
