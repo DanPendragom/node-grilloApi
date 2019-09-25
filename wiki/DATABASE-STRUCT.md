@@ -26,6 +26,13 @@ Below contains the application database collections structure:
 </p>
 
 
+## ```Event``` collection model:
+
+<p align="center">
+  <img src="./images/eventos.png">
+</p>
+
+
 ## ```Musicians``` collection model:
 
 <p align="center">
