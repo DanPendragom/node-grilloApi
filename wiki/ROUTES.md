@@ -1,6 +1,12 @@
-# Usage Manual:
+# Grillo Api
 > Routes guide
 
+## Index:
+  - [Home](https://github.com/messiasGeovani/grillo-api)
+  - [Database structure](https://github.com/messiasGeovani/grillo-api/blob/master/wiki/DATABASE-STRUCT.md)
+
+### Project routes:
+ 
 The grillo api use http protocol to work with uri routing, however you need to know how are the routes.
 Below contains all http routes and their features
 
