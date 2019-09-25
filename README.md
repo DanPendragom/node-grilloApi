@@ -49,7 +49,7 @@ application, operation and maintenance of the api.
 
 ## Development setup
 
-The grillo uses [express js](https://github.com/expressjs/express/) framework, and the project contasin the following structure:
+The grillo uses [express js](https://github.com/expressjs/express/) framework, and the project contains the following structure:
 
   ```
   config/
@@ -59,7 +59,11 @@ The grillo uses [express js](https://github.com/expressjs/express/) framework, a
   ```
  Where:
  
- [```config```](https://github.com/messiasGeovani/grillo-api/tree/master/src/config) is the directory that contais the file upload setup code, for this, we used the [```multer```](https://github.com/expressjs/multer) module.
+ ##### [```config```](https://github.com/messiasGeovani/grillo-api/tree/master/src/config) is the directory that contais the file upload setup code, for this, we used the [```multer```](https://github.com/expressjs/multer) module.
+ 
+ ##### [```routes```](https://github.com/messiasGeovani/grillo-api/tree/master/src/routes) is the directory that contais the routes middleware, that the front-end application needs to request.
+ 
+ ##### [```models```](https://github.com/messiasGeovani/grillo-api/tree/master/src/routes) is the directory that contais the database models of the system.
 
 To run this project in the development mode, you will use nodemon dev tool, located in the "dev" package.json script setup:
 
