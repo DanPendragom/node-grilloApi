@@ -45,6 +45,7 @@ The usage manual is intended to guide and inform the user as to the correct
 application, operation and maintenance of the api.
 
 - [Routes](https://github.com/messiasGeovani/grillo-api/blob/master/wiki/ROUTES.md)
+- [Database Structure](https://github.com/messiasGeovani/grillo-api/blob/master/wiki/DATABASE-STRUCT.md)
 
 ## Development setup
 
