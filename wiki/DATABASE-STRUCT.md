@@ -9,7 +9,7 @@
 ### Database structure:
 
 The grillo project was maked using the noSQL database query language, and the database managment system used to create the structure is MongoDB.
-The files of the database collection models was located in the [```routes```](https://github.com/messiasGeovani/grillo-api/tree/master/src/routes) directory.
+The files of the database collection models was located in the [```models```](https://github.com/messiasGeovani/grillo-api/tree/master/src/models) directory.
 Below contains the application database collections structure:
 
 ## ```User``` collection model:
