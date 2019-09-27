@@ -27,6 +27,7 @@ app.use(require('./routes/posts'));
 app.use(require('./routes/eventos'));
 app.use(require('./routes/vagas'));
 app.use(require('./routes/musicos'));
+app.use(require('./routes/mensagens'));
 
 // server run config
 app.listen(3000, () => {

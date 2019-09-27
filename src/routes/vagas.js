@@ -20,7 +20,7 @@ routes.post('/vaga', async (req, res) => {
 // getting all vacancy
 routes.get('/vagas', async (req, res) => {
     try {
-        // getting data events
+        // getting data vacancys
         const result = await Vagas.find().exec();
 
         return res.status(200).json(result);
